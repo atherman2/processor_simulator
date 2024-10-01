@@ -1,6 +1,6 @@
 #include "typedefs.c"
 
-Cont read_field(Cont bin_instruction, int start, int end)
+Word read_field(Word bin_instruction, int start, int end)
 {
     int size = end - start;
     int mask = 0;
@@ -15,7 +15,7 @@ Cont read_field(Cont bin_instruction, int start, int end)
 
     mask <<= start;
 
-    Cont result = mask & bin_instruction;
+    Word result = mask & bin_instruction;
 
     return (result >> start);
 }
